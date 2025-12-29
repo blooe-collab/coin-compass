@@ -1,1 +1,4 @@
 project_id = "hjdwipopsdsgntuapwaq"
+
+[functions.coinmarketcap]
+verify_jwt = false
