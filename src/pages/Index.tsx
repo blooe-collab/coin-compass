@@ -268,7 +268,7 @@ const Index = () => {
         <div className="container mx-auto px-4 py-6">
           <div className="flex items-center justify-between text-sm text-muted-foreground flex-wrap gap-2">
             <span>Data provided by CoinGecko (Free API)</span>
-            <span>Built with Lovable</span>
+            <span>Built by blooe</span>
           </div>
         </div>
       </footer>
