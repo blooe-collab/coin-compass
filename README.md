@@ -1,73 +1,136 @@
-# Welcome to your Lovable project
+# Coin Compass - Crypto Technical Analysis Platform
 
-## Project info
+## Project Overview
+**Coin Compass** is a web-based crypto platform that allows users to search for cryptocurrencies, view live market data, and get auto-generated technical analysis & trading signals.  
+Inspired by TradingView, with a dark fintech aesthetic and smooth animations.
 
-**URL**: https://lovable.dev/projects/REPLACE_WITH_PROJECT_ID
+![Coin Compass Mockup](./images/coin-compass-mockup.png)
 
-## How can I edit this code?
+**Goal:** Build a prototype demonstrating core functionality using **free CoinGecko API**.
 
-There are several ways of editing your application.
+---
 
-**Use Lovable**
+## Tech Stack
+- **Frontend:** React + TypeScript (or Next.js)
+- **Charts:** Chart.js / ApexCharts / TradingView Lightweight Charts
+- **State Management:** Redux / Zustand / Context API
+- **Styling:** Tailwind CSS (dark neon aesthetic)
+- **API:** CoinGecko (free, unlimited requests)
+- **Optional AI:** OpenAI / local model for trading signal reasoning
 
-Simply visit the [Lovable Project](https://lovable.dev/projects/REPLACE_WITH_PROJECT_ID) and start prompting.
+![Tech Stack Diagram](./images/tech-stack.png)
 
-Changes made via Lovable will be committed automatically to this repo.
+---
 
-**Use your preferred IDE**
+## Core Features (MVP)
 
-If you want to work locally using your own IDE, you can clone this repo and push changes. Pushed changes will also be reflected in Lovable.
+### 1. Coin Search
+- Autocomplete search bar
+- Show trending coins dynamically  
 
-The only requirement is having Node.js & npm installed - [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating)
+![Coin Search Mockup](./images/coin-search.png)
 
-Follow these steps:
+---
 
-```sh
-# Step 1: Clone the repository using the project's Git URL.
-git clone <YOUR_GIT_URL>
+### 2. Live Price & Market Stats
+- Price, 24h % change, market cap, supply  
+- ATH / ATL  
 
-# Step 2: Navigate to the project directory.
-cd <YOUR_PROJECT_NAME>
+![Market Stats Mockup](./images/market-stats.png)
 
-# Step 3: Install the necessary dependencies.
-npm i
+---
 
-# Step 4: Start the development server with auto-reloading and an instant preview.
-npm run dev
-```
+### 3. Interactive Price Chart
+- Candlestick view
+- Multiple timeframes: 24H, 7D, 30D, 90D, 1Y
+- Hover tooltips with price & volume
 
-**Edit a file directly in GitHub**
+![Price Chart Mockup](./images/price-chart.png)
 
-- Navigate to the desired file(s).
-- Click the "Edit" button (pencil icon) at the top right of the file view.
-- Make your changes and commit the changes.
+---
 
-**Use GitHub Codespaces**
+### 4. Auto Technical Analysis
+- RSI, MACD, SMA/EMA, Bollinger Bands
+- Buy/Sell/Hold signals with color-coded indicators  
 
-- Navigate to the main page of your repository.
-- Click on the "Code" button (green button) near the top right.
-- Select the "Codespaces" tab.
-- Click on "New codespace" to launch a new Codespace environment.
-- Edit files directly within the Codespace and commit and push your changes once you're done.
+![TA Signals Mockup](./images/ta-signals.png)
 
-## What technologies are used for this project?
+---
 
-This project is built with:
+## Extended Features (Phase 2)
+- Portfolio Watchlist with real-time P/L
+- Candle pattern recognition (doji, hammer, engulfing)
+- Price alerts via push notifications or email
+- Coin details page with social stats & dev activity
+- Multi-timeframe analysis comparison
+- Dark/light mode toggle
 
-- Vite
-- TypeScript
-- React
-- shadcn-ui
-- Tailwind CSS
+![Extended Features Mockup](./images/extended-features.png)
 
-## How can I deploy this project?
+---
 
-Simply open [Lovable](https://lovable.dev/projects/REPLACE_WITH_PROJECT_ID) and click on Share -> Publish.
+## UI / Design
+- Dark fintech aesthetic
+  - Background: Deep navy / #0B0F2C
+  - Bullish: Neon cyan / #00FFE0
+  - Bearish: Coral red / #FF6B6B
+- Smooth animations & glowing hover effects
+- Minimalist layout to prioritize charts & stats
 
-## Can I connect a custom domain to my Lovable project?
+![UI Style Guide](./images/ui-style-guide.png)
 
-Yes, you can!
+---
 
-To connect a domain, navigate to Project > Settings > Domains and click Connect Domain.
+## Project Structure
+/coin-compass
+├── /public
+├── /src
+│ ├── /components
+│ │ ├── SearchBar.tsx
+│ │ ├── CoinCard.tsx
+│ │ ├── Chart.tsx
+│ │ └── SignalBadge.tsx
+│ ├── /pages
+│ │ ├── Home.tsx
+│ │ └── CoinDetails.tsx
+│ ├── /services
+│ │ └── coingeckoApi.ts
+│ ├── /utils
+│ │ └── technicalAnalysis.ts
+│ └── App.tsx
+├── package.json
+└── README.md
 
-Read more here: [Setting up a custom domain](https://docs.lovable.dev/features/custom-domain#custom-domain)
+
+---
+
+## API Endpoints (CoinGecko)
+- `/coins/markets` → for live price & market stats  
+- `/coins/{id}/market_chart` → historical price data for charts  
+- `/coins/list` → for autocomplete / search  
+
+---
+
+## MVP Roadmap
+1. Set up React + Tailwind + Chart.js
+2. Fetch live coin data from CoinGecko
+3. Implement coin search & autocomplete
+4. Render interactive price chart
+5. Compute & display basic technical indicators (RSI, SMA, EMA)
+6. Add color-coded Buy/Sell/Hold signals
+7. Polish UI: dark theme, neon accents, hover effects
+
+---
+
+## Notes
+- Focus on **fast loading** and **clear UX**
+- TA can start as formulas; upgrade to AI signals later
+- Keep API requests minimal
+
+---
+
+## Future Ideas
+- AI-powered reasoning for signals
+- Mobile-friendly responsive layout
+- Shareable coin analysis links
+- Integration with portfolio trackers & alerts
